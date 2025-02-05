@@ -1,0 +1,536 @@
+2024-12-16 10:37:04 - root - INFO: - Dataset:LandUse_21
+2024-12-16 10:37:04 - root - INFO: - Autoencoder={
+2024-12-16 10:37:04 - root - INFO: -           arch1 = [59, 1024, 1024, 1024, 64]
+2024-12-16 10:37:04 - root - INFO: -           arch2 = [40, 1024, 1024, 1024, 64]
+2024-12-16 10:37:04 - root - INFO: -           activations1 = relu
+2024-12-16 10:37:04 - root - INFO: -           activations2 = relu
+2024-12-16 10:37:04 - root - INFO: -           batchnorm = True
+2024-12-16 10:37:04 - root - INFO: - training={
+2024-12-16 10:37:04 - root - INFO: -           seed = 20
+2024-12-16 10:37:04 - root - INFO: -           epoch = 300
+2024-12-16 10:37:04 - root - INFO: -           batch_size = 128
+2024-12-16 10:37:04 - root - INFO: -           lr = 0.0001
+2024-12-16 10:37:04 - root - INFO: -           alpha = 3.0
+2024-12-16 10:37:04 - root - INFO: -           beta = 3.6
+2024-12-16 10:37:04 - root - INFO: -           gamma = 9.5
+2024-12-16 10:37:04 - root - INFO: -           lambda1 = 0.01
+2024-12-16 10:37:04 - root - INFO: -           lambda2 = 5.0
+2024-12-16 10:37:04 - root - INFO: -           droprate = 0.08
+2024-12-16 10:37:04 - root - INFO: - print_num = 10
+2024-12-16 10:37:04 - root - INFO: - dataset = LandUse_21
+2024-12-16 10:37:07 - root - INFO: - Autoencoder(
+  (encoder): Sequential(
+    (0): Linear(in_features=59, out_features=1024, bias=True)
+    (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Linear(in_features=1024, out_features=1024, bias=True)
+    (4): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU()
+    (6): Linear(in_features=1024, out_features=1024, bias=True)
+    (7): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU()
+    (9): Linear(in_features=1024, out_features=64, bias=True)
+  )
+  (decoder): Sequential(
+    (0): Linear(in_features=64, out_features=1024, bias=True)
+    (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Linear(in_features=1024, out_features=1024, bias=True)
+    (4): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU()
+    (6): Linear(in_features=1024, out_features=1024, bias=True)
+    (7): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU()
+    (9): Linear(in_features=1024, out_features=59, bias=True)
+    (10): BatchNorm1d(59, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): ReLU()
+  )
+)
+2024-12-16 10:37:07 - root - INFO: - Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    capturable: False
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0001
+    maximize: False
+    weight_decay: 0
+)
+2024-12-16 10:37:23 - root - INFO: - [2;29mEpoch : 10/300 ===> Reconstruction Loss = 1.4277  ===> Global Consensus Learning Loss = 13.1588 ===> Classifying Consensus Learning Loss = -7.7249e+02 ===> Coding Consensus  Learning Loss = 120.1452 ===> Total Loss = -1.7020e+02[0m
+2024-12-16 10:37:25 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3408, 'NMI': 0.3629, 'ARI': 0.1585, 'accuracy': 0.269, 'precision': 0.2715, 'recall': 0.269, 'f_measure': 0.2616}}[0m
+2024-12-16 10:37:38 - root - INFO: - [2;29mEpoch : 20/300 ===> Reconstruction Loss = 1.1747  ===> Global Consensus Learning Loss = 6.1866 ===> Classifying Consensus Learning Loss = -8.1849e+02 ===> Coding Consensus  Learning Loss = 113.0313 ===> Total Loss = -2.5210e+02[0m
+2024-12-16 10:37:39 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.339, 'NMI': 0.361, 'ARI': 0.1615, 'accuracy': 0.2819, 'precision': 0.2719, 'recall': 0.2819, 'f_measure': 0.2726}}[0m
+2024-12-16 10:37:52 - root - INFO: - [2;29mEpoch : 30/300 ===> Reconstruction Loss = 1.0433  ===> Global Consensus Learning Loss = 0.8431 ===> Classifying Consensus Learning Loss = -8.2880e+02 ===> Coding Consensus  Learning Loss = 111.1481 ===> Total Loss = -2.7201e+02[0m
+2024-12-16 10:37:52 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3317, 'NMI': 0.354, 'ARI': 0.1603, 'accuracy': 0.2843, 'precision': 0.2828, 'recall': 0.2843, 'f_measure': 0.2789}}[0m
+2024-12-16 10:38:06 - root - INFO: - [2;29mEpoch : 40/300 ===> Reconstruction Loss = 1.0412  ===> Global Consensus Learning Loss = -2.4292 ===> Classifying Consensus Learning Loss = -8.3331e+02 ===> Coding Consensus  Learning Loss = 110.6222 ===> Total Loss = -2.7918e+02[0m
+2024-12-16 10:38:06 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3276, 'NMI': 0.3501, 'ARI': 0.1619, 'accuracy': 0.2929, 'precision': 0.2822, 'recall': 0.2929, 'f_measure': 0.2823}}[0m
+2024-12-16 10:38:21 - root - INFO: - [2;29mEpoch : 50/300 ===> Reconstruction Loss = 1.0048  ===> Global Consensus Learning Loss = -4.9522 ===> Classifying Consensus Learning Loss = -8.3773e+02 ===> Coding Consensus  Learning Loss = 109.9926 ===> Total Loss = -2.8681e+02[0m
+2024-12-16 10:38:21 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3233, 'NMI': 0.3458, 'ARI': 0.1595, 'accuracy': 0.2986, 'precision': 0.2891, 'recall': 0.2986, 'f_measure': 0.2905}}[0m
+2024-12-16 10:38:35 - root - INFO: - [2;29mEpoch : 60/300 ===> Reconstruction Loss = 0.9287  ===> Global Consensus Learning Loss = -6.8688 ===> Classifying Consensus Learning Loss = -8.3983e+02 ===> Coding Consensus  Learning Loss = 109.8171 ===> Total Loss = -2.8988e+02[0m
+2024-12-16 10:38:36 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3296, 'NMI': 0.3518, 'ARI': 0.1595, 'accuracy': 0.2948, 'precision': 0.295, 'recall': 0.2948, 'f_measure': 0.2913}}[0m
+2024-12-16 10:38:49 - root - INFO: - [2;29mEpoch : 70/300 ===> Reconstruction Loss = 0.9420  ===> Global Consensus Learning Loss = -8.5122 ===> Classifying Consensus Learning Loss = -8.3854e+02 ===> Coding Consensus  Learning Loss = 109.5543 ===> Total Loss = -2.8991e+02[0m
+2024-12-16 10:38:49 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3318, 'NMI': 0.3541, 'ARI': 0.1592, 'accuracy': 0.2962, 'precision': 0.2983, 'recall': 0.2962, 'f_measure': 0.2913}}[0m
+2024-12-16 10:39:03 - root - INFO: - [2;29mEpoch : 80/300 ===> Reconstruction Loss = 0.9372  ===> Global Consensus Learning Loss = -9.9643 ===> Classifying Consensus Learning Loss = -8.3857e+02 ===> Coding Consensus  Learning Loss = 109.7565 ===> Total Loss = -2.8895e+02[0m
+2024-12-16 10:39:03 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3229, 'NMI': 0.3454, 'ARI': 0.1506, 'accuracy': 0.2862, 'precision': 0.2961, 'recall': 0.2862, 'f_measure': 0.2864}}[0m
+2024-12-16 10:39:17 - root - INFO: - [2;29mEpoch : 90/300 ===> Reconstruction Loss = 0.8464  ===> Global Consensus Learning Loss = -11.1290 ===> Classifying Consensus Learning Loss = -8.4233e+02 ===> Coding Consensus  Learning Loss = 109.7219 ===> Total Loss = -2.9299e+02[0m
+2024-12-16 10:39:18 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3291, 'NMI': 0.3514, 'ARI': 0.1565, 'accuracy': 0.3105, 'precision': 0.3084, 'recall': 0.3105, 'f_measure': 0.3049}}[0m
+2024-12-16 10:39:32 - root - INFO: - [2;29mEpoch : 100/300 ===> Reconstruction Loss = 0.7748  ===> Global Consensus Learning Loss = -12.3257 ===> Classifying Consensus Learning Loss = -8.4149e+02 ===> Coding Consensus  Learning Loss = 109.3962 ===> Total Loss = -2.9386e+02[0m
+2024-12-16 10:39:35 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3243, 'NMI': 0.3467, 'ARI': 0.1521, 'accuracy': 0.2881, 'precision': 0.2896, 'recall': 0.2881, 'f_measure': 0.2861}}[0m
+2024-12-16 10:39:49 - root - INFO: - [2;29mEpoch : 110/300 ===> Reconstruction Loss = 0.8314  ===> Global Consensus Learning Loss = -13.3918 ===> Classifying Consensus Learning Loss = -8.4019e+02 ===> Coding Consensus  Learning Loss = 109.3118 ===> Total Loss = -2.9293e+02[0m
+2024-12-16 10:39:50 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3369, 'NMI': 0.3589, 'ARI': 0.1602, 'accuracy': 0.31, 'precision': 0.3079, 'recall': 0.31, 'f_measure': 0.3051}}[0m
+2024-12-16 10:40:04 - root - INFO: - [2;29mEpoch : 120/300 ===> Reconstruction Loss = 0.7999  ===> Global Consensus Learning Loss = -14.2785 ===> Classifying Consensus Learning Loss = -8.4280e+02 ===> Coding Consensus  Learning Loss = 109.2471 ===> Total Loss = -2.9591e+02[0m
+2024-12-16 10:40:05 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3193, 'NMI': 0.342, 'ARI': 0.1511, 'accuracy': 0.2862, 'precision': 0.2788, 'recall': 0.2862, 'f_measure': 0.2779}}[0m
+2024-12-16 10:40:19 - root - INFO: - [2;29mEpoch : 130/300 ===> Reconstruction Loss = 0.7620  ===> Global Consensus Learning Loss = -15.0493 ===> Classifying Consensus Learning Loss = -8.4309e+02 ===> Coding Consensus  Learning Loss = 109.2779 ===> Total Loss = -2.9609e+02[0m
+2024-12-16 10:40:19 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3314, 'NMI': 0.3536, 'ARI': 0.1545, 'accuracy': 0.2933, 'precision': 0.3036, 'recall': 0.2933, 'f_measure': 0.2944}}[0m
+2024-12-16 10:40:33 - root - INFO: - [2;29mEpoch : 140/300 ===> Reconstruction Loss = 0.7273  ===> Global Consensus Learning Loss = -15.8341 ===> Classifying Consensus Learning Loss = -8.4152e+02 ===> Coding Consensus  Learning Loss = 109.2957 ===> Total Loss = -2.9448e+02[0m
+2024-12-16 10:40:34 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3232, 'NMI': 0.3457, 'ARI': 0.1497, 'accuracy': 0.2867, 'precision': 0.2763, 'recall': 0.2867, 'f_measure': 0.2773}}[0m
+2024-12-16 10:40:48 - root - INFO: - [2;29mEpoch : 150/300 ===> Reconstruction Loss = 0.7123  ===> Global Consensus Learning Loss = -16.5890 ===> Classifying Consensus Learning Loss = -8.4236e+02 ===> Coding Consensus  Learning Loss = 109.1413 ===> Total Loss = -2.9611e+02[0m
+2024-12-16 10:40:48 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3277, 'NMI': 0.3501, 'ARI': 0.1536, 'accuracy': 0.2948, 'precision': 0.2967, 'recall': 0.2948, 'f_measure': 0.291}}[0m
+2024-12-16 10:41:03 - root - INFO: - [2;29mEpoch : 160/300 ===> Reconstruction Loss = 0.7883  ===> Global Consensus Learning Loss = -17.2348 ===> Classifying Consensus Learning Loss = -8.4419e+02 ===> Coding Consensus  Learning Loss = 109.3765 ===> Total Loss = -2.9669e+02[0m
+2024-12-16 10:41:03 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3348, 'NMI': 0.3569, 'ARI': 0.1648, 'accuracy': 0.309, 'precision': 0.294, 'recall': 0.309, 'f_measure': 0.2981}}[0m
+2024-12-16 10:41:16 - root - INFO: - [2;29mEpoch : 170/300 ===> Reconstruction Loss = 0.7369  ===> Global Consensus Learning Loss = -17.7676 ===> Classifying Consensus Learning Loss = -8.4193e+02 ===> Coding Consensus  Learning Loss = 109.2883 ===> Total Loss = -2.9493e+02[0m
+2024-12-16 10:41:16 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3316, 'NMI': 0.3538, 'ARI': 0.1548, 'accuracy': 0.2962, 'precision': 0.2897, 'recall': 0.2962, 'f_measure': 0.2903}}[0m
+2024-12-16 10:41:31 - root - INFO: - [2;29mEpoch : 180/300 ===> Reconstruction Loss = 0.7329  ===> Global Consensus Learning Loss = -18.2994 ===> Classifying Consensus Learning Loss = -8.4381e+02 ===> Coding Consensus  Learning Loss = 109.2432 ===> Total Loss = -2.9704e+02[0m
+2024-12-16 10:41:31 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3379, 'NMI': 0.36, 'ARI': 0.1637, 'accuracy': 0.3038, 'precision': 0.2995, 'recall': 0.3038, 'f_measure': 0.2971}}[0m
+2024-12-16 10:41:46 - root - INFO: - [2;29mEpoch : 190/300 ===> Reconstruction Loss = 0.6932  ===> Global Consensus Learning Loss = -18.8566 ===> Classifying Consensus Learning Loss = -8.4467e+02 ===> Coding Consensus  Learning Loss = 108.9852 ===> Total Loss = -2.9924e+02[0m
+2024-12-16 10:41:46 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.35, 'NMI': 0.3716, 'ARI': 0.1672, 'accuracy': 0.3152, 'precision': 0.3157, 'recall': 0.3152, 'f_measure': 0.3114}}[0m
+2024-12-16 10:42:01 - root - INFO: - [2;29mEpoch : 200/300 ===> Reconstruction Loss = 0.6913  ===> Global Consensus Learning Loss = -19.1967 ===> Classifying Consensus Learning Loss = -8.4478e+02 ===> Coding Consensus  Learning Loss = 109.0385 ===> Total Loss = -2.9908e+02[0m
+2024-12-16 10:42:01 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3389, 'NMI': 0.3608, 'ARI': 0.1584, 'accuracy': 0.3038, 'precision': 0.301, 'recall': 0.3038, 'f_measure': 0.3001}}[0m
+2024-12-16 10:42:16 - root - INFO: - [2;29mEpoch : 210/300 ===> Reconstruction Loss = 0.6529  ===> Global Consensus Learning Loss = -19.7125 ===> Classifying Consensus Learning Loss = -8.4694e+02 ===> Coding Consensus  Learning Loss = 109.1389 ===> Total Loss = -3.0079e+02[0m
+2024-12-16 10:42:16 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3235, 'NMI': 0.3461, 'ARI': 0.1539, 'accuracy': 0.2986, 'precision': 0.2982, 'recall': 0.2986, 'f_measure': 0.2929}}[0m
+2024-12-16 10:42:30 - root - INFO: - [2;29mEpoch : 220/300 ===> Reconstruction Loss = 0.6717  ===> Global Consensus Learning Loss = -20.1581 ===> Classifying Consensus Learning Loss = -8.4588e+02 ===> Coding Consensus  Learning Loss = 109.1714 ===> Total Loss = -2.9956e+02[0m
+2024-12-16 10:42:31 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3353, 'NMI': 0.3576, 'ARI': 0.1537, 'accuracy': 0.2967, 'precision': 0.303, 'recall': 0.2967, 'f_measure': 0.2936}}[0m
+2024-12-16 10:42:45 - root - INFO: - [2;29mEpoch : 230/300 ===> Reconstruction Loss = 0.6753  ===> Global Consensus Learning Loss = -20.5277 ===> Classifying Consensus Learning Loss = -8.4216e+02 ===> Coding Consensus  Learning Loss = 109.1694 ===> Total Loss = -2.9585e+02[0m
+2024-12-16 10:42:45 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3343, 'NMI': 0.3566, 'ARI': 0.156, 'accuracy': 0.3005, 'precision': 0.3111, 'recall': 0.3005, 'f_measure': 0.2976}}[0m
+2024-12-16 10:43:00 - root - INFO: - [2;29mEpoch : 240/300 ===> Reconstruction Loss = 0.6040  ===> Global Consensus Learning Loss = -20.9065 ===> Classifying Consensus Learning Loss = -8.4597e+02 ===> Coding Consensus  Learning Loss = 108.9112 ===> Total Loss = -3.0102e+02[0m
+2024-12-16 10:43:00 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3328, 'NMI': 0.3552, 'ARI': 0.152, 'accuracy': 0.3029, 'precision': 0.3117, 'recall': 0.3029, 'f_measure': 0.2994}}[0m
+2024-12-16 10:43:14 - root - INFO: - [2;29mEpoch : 250/300 ===> Reconstruction Loss = 0.6369  ===> Global Consensus Learning Loss = -21.2577 ===> Classifying Consensus Learning Loss = -8.4607e+02 ===> Coding Consensus  Learning Loss = 108.9244 ===> Total Loss = -3.0102e+02[0m
+2024-12-16 10:43:15 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3325, 'NMI': 0.3548, 'ARI': 0.1594, 'accuracy': 0.3043, 'precision': 0.2951, 'recall': 0.3043, 'f_measure': 0.2952}}[0m
+2024-12-16 10:43:29 - root - INFO: - [2;29mEpoch : 260/300 ===> Reconstruction Loss = 0.6042  ===> Global Consensus Learning Loss = -21.6971 ===> Classifying Consensus Learning Loss = -8.4792e+02 ===> Coding Consensus  Learning Loss = 108.9693 ===> Total Loss = -3.0269e+02[0m
+2024-12-16 10:43:29 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3391, 'NMI': 0.3614, 'ARI': 0.1585, 'accuracy': 0.3014, 'precision': 0.3135, 'recall': 0.3014, 'f_measure': 0.2967}}[0m
+2024-12-16 10:43:43 - root - INFO: - [2;29mEpoch : 270/300 ===> Reconstruction Loss = 0.6373  ===> Global Consensus Learning Loss = -21.9411 ===> Classifying Consensus Learning Loss = -8.4589e+02 ===> Coding Consensus  Learning Loss = 108.9426 ===> Total Loss = -3.0076e+02[0m
+2024-12-16 10:43:43 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.334, 'NMI': 0.3563, 'ARI': 0.1581, 'accuracy': 0.3043, 'precision': 0.3104, 'recall': 0.3043, 'f_measure': 0.3002}}[0m
+2024-12-16 10:43:57 - root - INFO: - [2;29mEpoch : 280/300 ===> Reconstruction Loss = 0.6390  ===> Global Consensus Learning Loss = -22.2389 ===> Classifying Consensus Learning Loss = -8.4633e+02 ===> Coding Consensus  Learning Loss = 108.8744 ===> Total Loss = -3.0154e+02[0m
+2024-12-16 10:43:58 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3376, 'NMI': 0.3597, 'ARI': 0.1565, 'accuracy': 0.311, 'precision': 0.3164, 'recall': 0.311, 'f_measure': 0.3083}}[0m
+2024-12-16 10:44:12 - root - INFO: - [2;29mEpoch : 290/300 ===> Reconstruction Loss = 0.6188  ===> Global Consensus Learning Loss = -22.4552 ===> Classifying Consensus Learning Loss = -8.4660e+02 ===> Coding Consensus  Learning Loss = 108.9994 ===> Total Loss = -3.0121e+02[0m
+2024-12-16 10:44:12 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3319, 'NMI': 0.3544, 'ARI': 0.1445, 'accuracy': 0.2867, 'precision': 0.2917, 'recall': 0.2867, 'f_measure': 0.2812}}[0m
+2024-12-16 10:44:25 - root - INFO: - [2;29mEpoch : 300/300 ===> Reconstruction Loss = 0.5864  ===> Global Consensus Learning Loss = -22.7583 ===> Classifying Consensus Learning Loss = -8.4671e+02 ===> Coding Consensus  Learning Loss = 108.9096 ===> Total Loss = -3.0181e+02[0m
+2024-12-16 10:44:26 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.337, 'NMI': 0.3591, 'ARI': 0.158, 'accuracy': 0.3138, 'precision': 0.319, 'recall': 0.3138, 'f_measure': 0.3108}}[0m
+2024-12-16 10:44:26 - root - INFO: - [2;29mbest scoresview_concat {'kmeans': {'AMI': 0.35, 'NMI': 0.3716, 'ARI': 0.1672, 'accuracy': 0.3152, 'precision': 0.3157, 'recall': 0.3152, 'f_measure': 0.3114}}[0m
+2024-12-16 10:44:26 - root - INFO: - Autoencoder(
+  (encoder): Sequential(
+    (0): Linear(in_features=59, out_features=1024, bias=True)
+    (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Linear(in_features=1024, out_features=1024, bias=True)
+    (4): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU()
+    (6): Linear(in_features=1024, out_features=1024, bias=True)
+    (7): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU()
+    (9): Linear(in_features=1024, out_features=64, bias=True)
+  )
+  (decoder): Sequential(
+    (0): Linear(in_features=64, out_features=1024, bias=True)
+    (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Linear(in_features=1024, out_features=1024, bias=True)
+    (4): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU()
+    (6): Linear(in_features=1024, out_features=1024, bias=True)
+    (7): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU()
+    (9): Linear(in_features=1024, out_features=59, bias=True)
+    (10): BatchNorm1d(59, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): ReLU()
+  )
+)
+2024-12-16 10:44:26 - root - INFO: - Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    capturable: False
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0001
+    maximize: False
+    weight_decay: 0
+)
+2024-12-16 10:44:41 - root - INFO: - [2;29mEpoch : 10/300 ===> Reconstruction Loss = 1.4058  ===> Global Consensus Learning Loss = 12.7394 ===> Classifying Consensus Learning Loss = -7.6720e+02 ===> Coding Consensus  Learning Loss = 119.6288 ===> Total Loss = -1.6753e+02[0m
+2024-12-16 10:44:41 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.35, 'NMI': 0.3721, 'ARI': 0.1565, 'accuracy': 0.2719, 'precision': 0.2722, 'recall': 0.2719, 'f_measure': 0.2619}}[0m
+2024-12-16 10:44:56 - root - INFO: - [2;29mEpoch : 20/300 ===> Reconstruction Loss = 1.2713  ===> Global Consensus Learning Loss = 6.0778 ===> Classifying Consensus Learning Loss = -8.1358e+02 ===> Coding Consensus  Learning Loss = 113.3050 ===> Total Loss = -2.4573e+02[0m
+2024-12-16 10:44:56 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3501, 'NMI': 0.3717, 'ARI': 0.1682, 'accuracy': 0.289, 'precision': 0.2927, 'recall': 0.289, 'f_measure': 0.285}}[0m
+2024-12-16 10:45:11 - root - INFO: - [2;29mEpoch : 30/300 ===> Reconstruction Loss = 1.0342  ===> Global Consensus Learning Loss = 0.7491 ===> Classifying Consensus Learning Loss = -8.2874e+02 ===> Coding Consensus  Learning Loss = 111.2167 ===> Total Loss = -2.7161e+02[0m
+2024-12-16 10:45:11 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3527, 'NMI': 0.3743, 'ARI': 0.175, 'accuracy': 0.2929, 'precision': 0.29, 'recall': 0.2929, 'f_measure': 0.2855}}[0m
+2024-12-16 10:45:26 - root - INFO: - [2;29mEpoch : 40/300 ===> Reconstruction Loss = 0.9807  ===> Global Consensus Learning Loss = -2.7321 ===> Classifying Consensus Learning Loss = -8.3232e+02 ===> Coding Consensus  Learning Loss = 110.6182 ===> Total Loss = -2.7828e+02[0m
+2024-12-16 10:45:26 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3587, 'NMI': 0.38, 'ARI': 0.1825, 'accuracy': 0.3224, 'precision': 0.3284, 'recall': 0.3224, 'f_measure': 0.3217}}[0m
+2024-12-16 10:45:41 - root - INFO: - [2;29mEpoch : 50/300 ===> Reconstruction Loss = 0.9870  ===> Global Consensus Learning Loss = -5.0941 ===> Classifying Consensus Learning Loss = -8.3507e+02 ===> Coding Consensus  Learning Loss = 110.0303 ===> Total Loss = -2.8398e+02[0m
+2024-12-16 10:45:42 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.365, 'NMI': 0.3861, 'ARI': 0.1829, 'accuracy': 0.3148, 'precision': 0.3224, 'recall': 0.3148, 'f_measure': 0.3153}}[0m
+2024-12-16 10:45:56 - root - INFO: - [2;29mEpoch : 60/300 ===> Reconstruction Loss = 0.9342  ===> Global Consensus Learning Loss = -7.0863 ===> Classifying Consensus Learning Loss = -8.3725e+02 ===> Coding Consensus  Learning Loss = 109.7770 ===> Total Loss = -2.8751e+02[0m
+2024-12-16 10:45:56 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3521, 'NMI': 0.3735, 'ARI': 0.1745, 'accuracy': 0.3167, 'precision': 0.3221, 'recall': 0.3167, 'f_measure': 0.3176}}[0m
+2024-12-16 10:46:07 - root - INFO: - [2;29mEpoch : 70/300 ===> Reconstruction Loss = 0.9925  ===> Global Consensus Learning Loss = -8.7577 ===> Classifying Consensus Learning Loss = -8.3857e+02 ===> Coding Consensus  Learning Loss = 109.7048 ===> Total Loss = -2.8914e+02[0m
+2024-12-16 10:46:30 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3687, 'NMI': 0.3898, 'ARI': 0.1808, 'accuracy': 0.3162, 'precision': 0.3284, 'recall': 0.3162, 'f_measure': 0.3174}}[0m
+2024-12-16 10:46:46 - root - INFO: - [2;29mEpoch : 80/300 ===> Reconstruction Loss = 0.8950  ===> Global Consensus Learning Loss = -10.1476 ===> Classifying Consensus Learning Loss = -8.4063e+02 ===> Coding Consensus  Learning Loss = 109.6075 ===> Total Loss = -2.9180e+02[0m
+2024-12-16 10:46:46 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3728, 'NMI': 0.3938, 'ARI': 0.185, 'accuracy': 0.3248, 'precision': 0.3312, 'recall': 0.3248, 'f_measure': 0.322}}[0m
+2024-12-16 10:47:01 - root - INFO: - [2;29mEpoch : 90/300 ===> Reconstruction Loss = 0.8647  ===> Global Consensus Learning Loss = -11.4235 ===> Classifying Consensus Learning Loss = -8.3943e+02 ===> Coding Consensus  Learning Loss = 109.5121 ===> Total Loss = -2.9112e+02[0m
+2024-12-16 10:47:01 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.362, 'NMI': 0.3832, 'ARI': 0.1777, 'accuracy': 0.3133, 'precision': 0.33, 'recall': 0.3133, 'f_measure': 0.3176}}[0m
+2024-12-16 10:47:16 - root - INFO: - [2;29mEpoch : 100/300 ===> Reconstruction Loss = 0.8317  ===> Global Consensus Learning Loss = -12.6096 ===> Classifying Consensus Learning Loss = -8.3981e+02 ===> Coding Consensus  Learning Loss = 109.4075 ===> Total Loss = -2.9206e+02[0m
+2024-12-16 10:47:17 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3798, 'NMI': 0.4004, 'ARI': 0.1928, 'accuracy': 0.3257, 'precision': 0.3347, 'recall': 0.3257, 'f_measure': 0.325}}[0m
+2024-12-16 10:47:32 - root - INFO: - [2;29mEpoch : 110/300 ===> Reconstruction Loss = 0.7864  ===> Global Consensus Learning Loss = -13.5120 ===> Classifying Consensus Learning Loss = -8.3987e+02 ===> Coding Consensus  Learning Loss = 109.1595 ===> Total Loss = -2.9342e+02[0m
+2024-12-16 10:47:32 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3516, 'NMI': 0.3732, 'ARI': 0.1712, 'accuracy': 0.32, 'precision': 0.3316, 'recall': 0.32, 'f_measure': 0.3217}}[0m
+2024-12-16 10:47:46 - root - INFO: - [2;29mEpoch : 120/300 ===> Reconstruction Loss = 0.7894  ===> Global Consensus Learning Loss = -14.3672 ===> Classifying Consensus Learning Loss = -8.4008e+02 ===> Coding Consensus  Learning Loss = 109.3177 ===> Total Loss = -2.9284e+02[0m
+2024-12-16 10:47:46 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3594, 'NMI': 0.3809, 'ARI': 0.1664, 'accuracy': 0.3143, 'precision': 0.3375, 'recall': 0.3143, 'f_measure': 0.3185}}[0m
+2024-12-16 10:48:00 - root - INFO: - [2;29mEpoch : 130/300 ===> Reconstruction Loss = 0.7540  ===> Global Consensus Learning Loss = -15.2505 ===> Classifying Consensus Learning Loss = -8.4140e+02 ===> Coding Consensus  Learning Loss = 109.2563 ===> Total Loss = -2.9452e+02[0m
+2024-12-16 10:48:00 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3664, 'NMI': 0.3875, 'ARI': 0.1762, 'accuracy': 0.3138, 'precision': 0.3178, 'recall': 0.3138, 'f_measure': 0.3115}}[0m
+2024-12-16 10:48:15 - root - INFO: - [2;29mEpoch : 140/300 ===> Reconstruction Loss = 0.7267  ===> Global Consensus Learning Loss = -15.9337 ===> Classifying Consensus Learning Loss = -8.4379e+02 ===> Coding Consensus  Learning Loss = 109.1079 ===> Total Loss = -2.9768e+02[0m
+2024-12-16 10:48:15 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3547, 'NMI': 0.3762, 'ARI': 0.1663, 'accuracy': 0.2967, 'precision': 0.3014, 'recall': 0.2967, 'f_measure': 0.2944}}[0m
+2024-12-16 10:48:29 - root - INFO: - [2;29mEpoch : 150/300 ===> Reconstruction Loss = 0.7046  ===> Global Consensus Learning Loss = -16.6554 ===> Classifying Consensus Learning Loss = -8.4103e+02 ===> Coding Consensus  Learning Loss = 109.1225 ===> Total Loss = -2.9488e+02[0m
+2024-12-16 10:48:36 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3697, 'NMI': 0.3907, 'ARI': 0.1775, 'accuracy': 0.3229, 'precision': 0.3386, 'recall': 0.3229, 'f_measure': 0.3261}}[0m
+2024-12-16 10:48:51 - root - INFO: - [2;29mEpoch : 160/300 ===> Reconstruction Loss = 0.7689  ===> Global Consensus Learning Loss = -17.2466 ===> Classifying Consensus Learning Loss = -8.4381e+02 ===> Coding Consensus  Learning Loss = 109.3356 ===> Total Loss = -2.9654e+02[0m
+2024-12-16 10:48:51 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3618, 'NMI': 0.3832, 'ARI': 0.1736, 'accuracy': 0.3267, 'precision': 0.3431, 'recall': 0.3267, 'f_measure': 0.3277}}[0m
+2024-12-16 10:49:07 - root - INFO: - [2;29mEpoch : 170/300 ===> Reconstruction Loss = 0.6950  ===> Global Consensus Learning Loss = -17.8414 ===> Classifying Consensus Learning Loss = -8.3993e+02 ===> Coding Consensus  Learning Loss = 109.0996 ===> Total Loss = -2.9392e+02[0m
+2024-12-16 10:49:08 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3772, 'NMI': 0.398, 'ARI': 0.1939, 'accuracy': 0.3438, 'precision': 0.3569, 'recall': 0.3438, 'f_measure': 0.3432}}[0m
+2024-12-16 10:49:23 - root - INFO: - [2;29mEpoch : 180/300 ===> Reconstruction Loss = 0.7080  ===> Global Consensus Learning Loss = -18.3211 ===> Classifying Consensus Learning Loss = -8.4275e+02 ===> Coding Consensus  Learning Loss = 109.0917 ===> Total Loss = -2.9676e+02[0m
+2024-12-16 10:49:23 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3657, 'NMI': 0.3868, 'ARI': 0.1824, 'accuracy': 0.3286, 'precision': 0.3387, 'recall': 0.3286, 'f_measure': 0.3283}}[0m
+2024-12-16 10:49:39 - root - INFO: - [2;29mEpoch : 190/300 ===> Reconstruction Loss = 0.7692  ===> Global Consensus Learning Loss = -18.9734 ===> Classifying Consensus Learning Loss = -8.3980e+02 ===> Coding Consensus  Learning Loss = 109.1759 ===> Total Loss = -2.9334e+02[0m
+2024-12-16 10:49:39 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3616, 'NMI': 0.3828, 'ARI': 0.1756, 'accuracy': 0.3138, 'precision': 0.3262, 'recall': 0.3138, 'f_measure': 0.3156}}[0m
+2024-12-16 10:49:55 - root - INFO: - [2;29mEpoch : 200/300 ===> Reconstruction Loss = 0.6259  ===> Global Consensus Learning Loss = -19.3104 ===> Classifying Consensus Learning Loss = -8.4483e+02 ===> Coding Consensus  Learning Loss = 108.9450 ===> Total Loss = -2.9967e+02[0m
+2024-12-16 10:49:55 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3607, 'NMI': 0.382, 'ARI': 0.1738, 'accuracy': 0.3162, 'precision': 0.3393, 'recall': 0.3162, 'f_measure': 0.3218}}[0m
+2024-12-16 10:50:10 - root - INFO: - [2;29mEpoch : 210/300 ===> Reconstruction Loss = 0.6486  ===> Global Consensus Learning Loss = -19.8767 ===> Classifying Consensus Learning Loss = -8.4251e+02 ===> Coding Consensus  Learning Loss = 109.3021 ===> Total Loss = -2.9555e+02[0m
+2024-12-16 10:50:11 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3727, 'NMI': 0.3936, 'ARI': 0.1792, 'accuracy': 0.3324, 'precision': 0.3499, 'recall': 0.3324, 'f_measure': 0.3361}}[0m
+2024-12-16 10:50:25 - root - INFO: - [2;29mEpoch : 220/300 ===> Reconstruction Loss = 0.6498  ===> Global Consensus Learning Loss = -20.2886 ===> Classifying Consensus Learning Loss = -8.4625e+02 ===> Coding Consensus  Learning Loss = 109.1502 ===> Total Loss = -3.0005e+02[0m
+2024-12-16 10:50:26 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3723, 'NMI': 0.3933, 'ARI': 0.1782, 'accuracy': 0.3181, 'precision': 0.3285, 'recall': 0.3181, 'f_measure': 0.3171}}[0m
+2024-12-16 10:50:39 - root - INFO: - [2;29mEpoch : 230/300 ===> Reconstruction Loss = 0.6230  ===> Global Consensus Learning Loss = -20.5753 ===> Classifying Consensus Learning Loss = -8.4628e+02 ===> Coding Consensus  Learning Loss = 108.9978 ===> Total Loss = -3.0087e+02[0m
+2024-12-16 10:50:40 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3479, 'NMI': 0.3696, 'ARI': 0.1625, 'accuracy': 0.301, 'precision': 0.3111, 'recall': 0.301, 'f_measure': 0.303}}[0m
+2024-12-16 10:50:54 - root - INFO: - [2;29mEpoch : 240/300 ===> Reconstruction Loss = 0.6049  ===> Global Consensus Learning Loss = -21.0494 ===> Classifying Consensus Learning Loss = -8.4947e+02 ===> Coding Consensus  Learning Loss = 109.0310 ===> Total Loss = -3.0392e+02[0m
+2024-12-16 10:50:55 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3743, 'NMI': 0.3952, 'ARI': 0.1845, 'accuracy': 0.3362, 'precision': 0.35, 'recall': 0.3362, 'f_measure': 0.3385}}[0m
+2024-12-16 10:51:09 - root - INFO: - [2;29mEpoch : 250/300 ===> Reconstruction Loss = 0.6579  ===> Global Consensus Learning Loss = -21.3571 ===> Classifying Consensus Learning Loss = -8.4265e+02 ===> Coding Consensus  Learning Loss = 109.1451 ===> Total Loss = -2.9648e+02[0m
+2024-12-16 10:51:09 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.37, 'NMI': 0.391, 'ARI': 0.1835, 'accuracy': 0.3329, 'precision': 0.3373, 'recall': 0.3329, 'f_measure': 0.3311}}[0m
+2024-12-16 10:51:24 - root - INFO: - [2;29mEpoch : 260/300 ===> Reconstruction Loss = 0.6073  ===> Global Consensus Learning Loss = -21.7011 ===> Classifying Consensus Learning Loss = -8.4622e+02 ===> Coding Consensus  Learning Loss = 109.0000 ===> Total Loss = -3.0083e+02[0m
+2024-12-16 10:51:25 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3594, 'NMI': 0.3807, 'ARI': 0.1731, 'accuracy': 0.3195, 'precision': 0.3312, 'recall': 0.3195, 'f_measure': 0.3217}}[0m
+2024-12-16 10:51:40 - root - INFO: - [2;29mEpoch : 270/300 ===> Reconstruction Loss = 0.6123  ===> Global Consensus Learning Loss = -22.0123 ===> Classifying Consensus Learning Loss = -8.4701e+02 ===> Coding Consensus  Learning Loss = 109.0458 ===> Total Loss = -3.0139e+02[0m
+2024-12-16 10:51:41 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3661, 'NMI': 0.3874, 'ARI': 0.1773, 'accuracy': 0.3138, 'precision': 0.325, 'recall': 0.3138, 'f_measure': 0.3115}}[0m
+2024-12-16 10:51:55 - root - INFO: - [2;29mEpoch : 280/300 ===> Reconstruction Loss = 0.6309  ===> Global Consensus Learning Loss = -22.3875 ===> Classifying Consensus Learning Loss = -8.4666e+02 ===> Coding Consensus  Learning Loss = 109.0431 ===> Total Loss = -3.0103e+02[0m
+2024-12-16 10:51:58 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3707, 'NMI': 0.3916, 'ARI': 0.1827, 'accuracy': 0.3238, 'precision': 0.3299, 'recall': 0.3238, 'f_measure': 0.3221}}[0m
+2024-12-16 10:52:13 - root - INFO: - [2;29mEpoch : 290/300 ===> Reconstruction Loss = 0.6106  ===> Global Consensus Learning Loss = -22.5997 ===> Classifying Consensus Learning Loss = -8.4820e+02 ===> Coding Consensus  Learning Loss = 108.9673 ===> Total Loss = -3.0298e+02[0m
+2024-12-16 10:52:13 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3734, 'NMI': 0.3944, 'ARI': 0.1813, 'accuracy': 0.3295, 'precision': 0.346, 'recall': 0.3295, 'f_measure': 0.3319}}[0m
+2024-12-16 10:52:28 - root - INFO: - [2;29mEpoch : 300/300 ===> Reconstruction Loss = 0.5833  ===> Global Consensus Learning Loss = -22.8675 ===> Classifying Consensus Learning Loss = -8.4573e+02 ===> Coding Consensus  Learning Loss = 108.9809 ===> Total Loss = -3.0047e+02[0m
+2024-12-16 10:52:28 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3668, 'NMI': 0.388, 'ARI': 0.1824, 'accuracy': 0.3286, 'precision': 0.3465, 'recall': 0.3286, 'f_measure': 0.3316}}[0m
+2024-12-16 10:52:28 - root - INFO: - [2;29mbest scoresview_concat {'kmeans': {'AMI': 0.3772, 'NMI': 0.398, 'ARI': 0.1939, 'accuracy': 0.3438, 'precision': 0.3569, 'recall': 0.3438, 'f_measure': 0.3432}}[0m
+2024-12-16 10:52:29 - root - INFO: - Autoencoder(
+  (encoder): Sequential(
+    (0): Linear(in_features=59, out_features=1024, bias=True)
+    (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Linear(in_features=1024, out_features=1024, bias=True)
+    (4): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU()
+    (6): Linear(in_features=1024, out_features=1024, bias=True)
+    (7): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU()
+    (9): Linear(in_features=1024, out_features=64, bias=True)
+  )
+  (decoder): Sequential(
+    (0): Linear(in_features=64, out_features=1024, bias=True)
+    (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Linear(in_features=1024, out_features=1024, bias=True)
+    (4): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU()
+    (6): Linear(in_features=1024, out_features=1024, bias=True)
+    (7): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU()
+    (9): Linear(in_features=1024, out_features=59, bias=True)
+    (10): BatchNorm1d(59, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): ReLU()
+  )
+)
+2024-12-16 10:52:29 - root - INFO: - Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    capturable: False
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0001
+    maximize: False
+    weight_decay: 0
+)
+2024-12-16 10:52:43 - root - INFO: - [2;29mEpoch : 10/300 ===> Reconstruction Loss = 1.3564  ===> Global Consensus Learning Loss = 12.5570 ===> Classifying Consensus Learning Loss = -7.7310e+02 ===> Coding Consensus  Learning Loss = 119.1053 ===> Total Loss = -1.7609e+02[0m
+2024-12-16 10:52:43 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3458, 'NMI': 0.3678, 'ARI': 0.1582, 'accuracy': 0.28, 'precision': 0.2878, 'recall': 0.28, 'f_measure': 0.2759}}[0m
+2024-12-16 10:52:58 - root - INFO: - [2;29mEpoch : 20/300 ===> Reconstruction Loss = 1.1643  ===> Global Consensus Learning Loss = 5.3054 ===> Classifying Consensus Learning Loss = -8.1806e+02 ===> Coding Consensus  Learning Loss = 112.8596 ===> Total Loss = -2.5254e+02[0m
+2024-12-16 10:52:59 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.345, 'NMI': 0.3668, 'ARI': 0.1655, 'accuracy': 0.2976, 'precision': 0.3081, 'recall': 0.2976, 'f_measure': 0.2984}}[0m
+2024-12-16 10:53:13 - root - INFO: - [2;29mEpoch : 30/300 ===> Reconstruction Loss = 1.0156  ===> Global Consensus Learning Loss = 0.1684 ===> Classifying Consensus Learning Loss = -8.2779e+02 ===> Coding Consensus  Learning Loss = 111.1112 ===> Total Loss = -2.7122e+02[0m
+2024-12-16 10:53:14 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3501, 'NMI': 0.3717, 'ARI': 0.1693, 'accuracy': 0.2948, 'precision': 0.3, 'recall': 0.2948, 'f_measure': 0.2941}}[0m
+2024-12-16 10:53:29 - root - INFO: - [2;29mEpoch : 40/300 ===> Reconstruction Loss = 0.9624  ===> Global Consensus Learning Loss = -3.0299 ===> Classifying Consensus Learning Loss = -8.3336e+02 ===> Coding Consensus  Learning Loss = 110.1765 ===> Total Loss = -2.8155e+02[0m
+2024-12-16 10:53:29 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3374, 'NMI': 0.3594, 'ARI': 0.1623, 'accuracy': 0.3014, 'precision': 0.3103, 'recall': 0.3014, 'f_measure': 0.3031}}[0m
+2024-12-16 10:53:44 - root - INFO: - [2;29mEpoch : 50/300 ===> Reconstruction Loss = 0.8777  ===> Global Consensus Learning Loss = -5.4238 ===> Classifying Consensus Learning Loss = -8.3431e+02 ===> Coding Consensus  Learning Loss = 110.0323 ===> Total Loss = -2.8333e+02[0m
+2024-12-16 10:53:44 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.366, 'NMI': 0.3871, 'ARI': 0.1863, 'accuracy': 0.3186, 'precision': 0.3156, 'recall': 0.3186, 'f_measure': 0.3123}}[0m
+2024-12-16 10:53:59 - root - INFO: - [2;29mEpoch : 60/300 ===> Reconstruction Loss = 0.8597  ===> Global Consensus Learning Loss = -7.4335 ===> Classifying Consensus Learning Loss = -8.3597e+02 ===> Coding Consensus  Learning Loss = 109.7831 ===> Total Loss = -2.8627e+02[0m
+2024-12-16 10:53:59 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3496, 'NMI': 0.3712, 'ARI': 0.169, 'accuracy': 0.3, 'precision': 0.3108, 'recall': 0.3, 'f_measure': 0.3022}}[0m
+2024-12-16 10:54:14 - root - INFO: - [2;29mEpoch : 70/300 ===> Reconstruction Loss = 0.8841  ===> Global Consensus Learning Loss = -9.0031 ===> Classifying Consensus Learning Loss = -8.3533e+02 ===> Coding Consensus  Learning Loss = 109.6016 ===> Total Loss = -2.8653e+02[0m
+2024-12-16 10:54:14 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.364, 'NMI': 0.3851, 'ARI': 0.1837, 'accuracy': 0.329, 'precision': 0.3318, 'recall': 0.329, 'f_measure': 0.3276}}[0m
+2024-12-16 10:54:29 - root - INFO: - [2;29mEpoch : 80/300 ===> Reconstruction Loss = 0.8602  ===> Global Consensus Learning Loss = -10.5314 ===> Classifying Consensus Learning Loss = -8.3735e+02 ===> Coding Consensus  Learning Loss = 109.6347 ===> Total Loss = -2.8842e+02[0m
+2024-12-16 10:54:33 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3532, 'NMI': 0.3747, 'ARI': 0.1705, 'accuracy': 0.3043, 'precision': 0.3163, 'recall': 0.3043, 'f_measure': 0.3067}}[0m
+2024-12-16 10:54:48 - root - INFO: - [2;29mEpoch : 90/300 ===> Reconstruction Loss = 0.8232  ===> Global Consensus Learning Loss = -11.7107 ===> Classifying Consensus Learning Loss = -8.3707e+02 ===> Coding Consensus  Learning Loss = 109.5217 ===> Total Loss = -2.8876e+02[0m
+2024-12-16 10:54:48 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3537, 'NMI': 0.3751, 'ARI': 0.175, 'accuracy': 0.3167, 'precision': 0.3282, 'recall': 0.3167, 'f_measure': 0.3187}}[0m
+2024-12-16 10:55:04 - root - INFO: - [2;29mEpoch : 100/300 ===> Reconstruction Loss = 0.7507  ===> Global Consensus Learning Loss = -12.7428 ===> Classifying Consensus Learning Loss = -8.3835e+02 ===> Coding Consensus  Learning Loss = 109.4242 ===> Total Loss = -2.9060e+02[0m
+2024-12-16 10:55:06 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3548, 'NMI': 0.3762, 'ARI': 0.1751, 'accuracy': 0.3157, 'precision': 0.3222, 'recall': 0.3157, 'f_measure': 0.3154}}[0m
+2024-12-16 10:55:22 - root - INFO: - [2;29mEpoch : 110/300 ===> Reconstruction Loss = 0.7744  ===> Global Consensus Learning Loss = -13.6598 ===> Classifying Consensus Learning Loss = -8.3911e+02 ===> Coding Consensus  Learning Loss = 109.3282 ===> Total Loss = -2.9183e+02[0m
+2024-12-16 10:55:23 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3616, 'NMI': 0.3829, 'ARI': 0.1788, 'accuracy': 0.3195, 'precision': 0.3326, 'recall': 0.3195, 'f_measure': 0.3209}}[0m
+2024-12-16 10:55:37 - root - INFO: - [2;29mEpoch : 120/300 ===> Reconstruction Loss = 0.7741  ===> Global Consensus Learning Loss = -14.6253 ===> Classifying Consensus Learning Loss = -8.3872e+02 ===> Coding Consensus  Learning Loss = 109.2437 ===> Total Loss = -2.9187e+02[0m
+2024-12-16 10:55:37 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3541, 'NMI': 0.3756, 'ARI': 0.1742, 'accuracy': 0.3095, 'precision': 0.3205, 'recall': 0.3095, 'f_measure': 0.3116}}[0m
+2024-12-16 10:55:51 - root - INFO: - [2;29mEpoch : 130/300 ===> Reconstruction Loss = 0.7159  ===> Global Consensus Learning Loss = -15.4016 ===> Classifying Consensus Learning Loss = -8.4101e+02 ===> Coding Consensus  Learning Loss = 109.2799 ===> Total Loss = -2.9405e+02[0m
+2024-12-16 10:55:51 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3532, 'NMI': 0.3749, 'ARI': 0.1719, 'accuracy': 0.3052, 'precision': 0.3088, 'recall': 0.3052, 'f_measure': 0.3008}}[0m
+2024-12-16 10:56:06 - root - INFO: - [2;29mEpoch : 140/300 ===> Reconstruction Loss = 0.7992  ===> Global Consensus Learning Loss = -16.0893 ===> Classifying Consensus Learning Loss = -8.3998e+02 ===> Coding Consensus  Learning Loss = 109.1456 ===> Total Loss = -2.9361e+02[0m
+2024-12-16 10:56:06 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3705, 'NMI': 0.3915, 'ARI': 0.176, 'accuracy': 0.3057, 'precision': 0.3217, 'recall': 0.3057, 'f_measure': 0.3073}}[0m
+2024-12-16 10:56:22 - root - INFO: - [2;29mEpoch : 150/300 ===> Reconstruction Loss = 0.6806  ===> Global Consensus Learning Loss = -16.7363 ===> Classifying Consensus Learning Loss = -8.4098e+02 ===> Coding Consensus  Learning Loss = 109.1492 ===> Total Loss = -2.9472e+02[0m
+2024-12-16 10:56:22 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3552, 'NMI': 0.3767, 'ARI': 0.1724, 'accuracy': 0.3152, 'precision': 0.3263, 'recall': 0.3152, 'f_measure': 0.3151}}[0m
+2024-12-16 10:56:37 - root - INFO: - [2;29mEpoch : 160/300 ===> Reconstruction Loss = 0.7309  ===> Global Consensus Learning Loss = -17.3597 ===> Classifying Consensus Learning Loss = -8.4061e+02 ===> Coding Consensus  Learning Loss = 109.2460 ===> Total Loss = -2.9382e+02[0m
+2024-12-16 10:56:37 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3605, 'NMI': 0.3817, 'ARI': 0.1778, 'accuracy': 0.3176, 'precision': 0.3253, 'recall': 0.3176, 'f_measure': 0.3179}}[0m
+2024-12-16 10:56:52 - root - INFO: - [2;29mEpoch : 170/300 ===> Reconstruction Loss = 0.6512  ===> Global Consensus Learning Loss = -17.8609 ===> Classifying Consensus Learning Loss = -8.4111e+02 ===> Coding Consensus  Learning Loss = 109.1799 ===> Total Loss = -2.9474e+02[0m
+2024-12-16 10:56:53 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3569, 'NMI': 0.3784, 'ARI': 0.1757, 'accuracy': 0.3171, 'precision': 0.3229, 'recall': 0.3171, 'f_measure': 0.3162}}[0m
+2024-12-16 10:57:08 - root - INFO: - [2;29mEpoch : 180/300 ===> Reconstruction Loss = 0.6779  ===> Global Consensus Learning Loss = -18.4361 ===> Classifying Consensus Learning Loss = -8.4451e+02 ===> Coding Consensus  Learning Loss = 109.0833 ===> Total Loss = -2.9860e+02[0m
+2024-12-16 10:57:08 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.352, 'NMI': 0.3736, 'ARI': 0.1693, 'accuracy': 0.3014, 'precision': 0.311, 'recall': 0.3014, 'f_measure': 0.3009}}[0m
+2024-12-16 10:57:23 - root - INFO: - [2;29mEpoch : 190/300 ===> Reconstruction Loss = 0.6800  ===> Global Consensus Learning Loss = -18.9096 ===> Classifying Consensus Learning Loss = -8.4051e+02 ===> Coding Consensus  Learning Loss = 109.0769 ===> Total Loss = -2.9464e+02[0m
+2024-12-16 10:57:24 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.354, 'NMI': 0.3755, 'ARI': 0.1702, 'accuracy': 0.3014, 'precision': 0.3116, 'recall': 0.3014, 'f_measure': 0.3017}}[0m
+2024-12-16 10:57:38 - root - INFO: - [2;29mEpoch : 200/300 ===> Reconstruction Loss = 0.7026  ===> Global Consensus Learning Loss = -19.4424 ===> Classifying Consensus Learning Loss = -8.4069e+02 ===> Coding Consensus  Learning Loss = 109.0877 ===> Total Loss = -2.9474e+02[0m
+2024-12-16 10:57:39 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3576, 'NMI': 0.379, 'ARI': 0.1812, 'accuracy': 0.3167, 'precision': 0.3176, 'recall': 0.3167, 'f_measure': 0.3104}}[0m
+2024-12-16 10:57:54 - root - INFO: - [2;29mEpoch : 210/300 ===> Reconstruction Loss = 0.6461  ===> Global Consensus Learning Loss = -19.7676 ===> Classifying Consensus Learning Loss = -8.4286e+02 ===> Coding Consensus  Learning Loss = 109.0162 ===> Total Loss = -2.9733e+02[0m
+2024-12-16 10:57:54 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3678, 'NMI': 0.3888, 'ARI': 0.1775, 'accuracy': 0.32, 'precision': 0.3284, 'recall': 0.32, 'f_measure': 0.3197}}[0m
+2024-12-16 10:58:06 - root - INFO: - [2;29mEpoch : 220/300 ===> Reconstruction Loss = 0.6159  ===> Global Consensus Learning Loss = -20.2002 ===> Classifying Consensus Learning Loss = -8.4111e+02 ===> Coding Consensus  Learning Loss = 109.0598 ===> Total Loss = -2.9540e+02[0m
+2024-12-16 10:58:21 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3587, 'NMI': 0.3803, 'ARI': 0.17, 'accuracy': 0.3129, 'precision': 0.3364, 'recall': 0.3129, 'f_measure': 0.3145}}[0m
+2024-12-16 10:58:28 - root - INFO: - [2;29mEpoch : 230/300 ===> Reconstruction Loss = 0.6150  ===> Global Consensus Learning Loss = -20.5642 ===> Classifying Consensus Learning Loss = -8.4453e+02 ===> Coding Consensus  Learning Loss = 108.9573 ===> Total Loss = -2.9933e+02[0m
+2024-12-16 10:58:49 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3685, 'NMI': 0.3895, 'ARI': 0.1785, 'accuracy': 0.3176, 'precision': 0.3314, 'recall': 0.3176, 'f_measure': 0.3203}}[0m
+2024-12-16 10:59:03 - root - INFO: - [2;29mEpoch : 240/300 ===> Reconstruction Loss = 0.5667  ===> Global Consensus Learning Loss = -21.0115 ===> Classifying Consensus Learning Loss = -8.4179e+02 ===> Coding Consensus  Learning Loss = 109.0448 ===> Total Loss = -2.9621e+02[0m
+2024-12-16 10:59:04 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3596, 'NMI': 0.3809, 'ARI': 0.1744, 'accuracy': 0.3133, 'precision': 0.3249, 'recall': 0.3133, 'f_measure': 0.3139}}[0m
+2024-12-16 10:59:18 - root - INFO: - [2;29mEpoch : 250/300 ===> Reconstruction Loss = 0.6196  ===> Global Consensus Learning Loss = -21.4375 ===> Classifying Consensus Learning Loss = -8.4076e+02 ===> Coding Consensus  Learning Loss = 109.0785 ===> Total Loss = -2.9497e+02[0m
+2024-12-16 10:59:19 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3659, 'NMI': 0.387, 'ARI': 0.1775, 'accuracy': 0.3148, 'precision': 0.3287, 'recall': 0.3148, 'f_measure': 0.3167}}[0m
+2024-12-16 10:59:35 - root - INFO: - [2;29mEpoch : 260/300 ===> Reconstruction Loss = 0.5989  ===> Global Consensus Learning Loss = -21.6324 ===> Classifying Consensus Learning Loss = -8.4368e+02 ===> Coding Consensus  Learning Loss = 109.0531 ===> Total Loss = -2.9803e+02[0m
+2024-12-16 10:59:36 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3693, 'NMI': 0.3904, 'ARI': 0.1776, 'accuracy': 0.3214, 'precision': 0.3347, 'recall': 0.3214, 'f_measure': 0.321}}[0m
+2024-12-16 10:59:50 - root - INFO: - [2;29mEpoch : 270/300 ===> Reconstruction Loss = 0.5758  ===> Global Consensus Learning Loss = -21.9945 ===> Classifying Consensus Learning Loss = -8.4366e+02 ===> Coding Consensus  Learning Loss = 108.9738 ===> Total Loss = -2.9844e+02[0m
+2024-12-16 10:59:51 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3595, 'NMI': 0.3808, 'ARI': 0.1762, 'accuracy': 0.319, 'precision': 0.3306, 'recall': 0.319, 'f_measure': 0.3203}}[0m
+2024-12-16 11:00:06 - root - INFO: - [2;29mEpoch : 280/300 ===> Reconstruction Loss = 0.5948  ===> Global Consensus Learning Loss = -22.2814 ===> Classifying Consensus Learning Loss = -8.4443e+02 ===> Coding Consensus  Learning Loss = 109.1167 ===> Total Loss = -2.9847e+02[0m
+2024-12-16 11:00:23 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3697, 'NMI': 0.3907, 'ARI': 0.1802, 'accuracy': 0.3248, 'precision': 0.3292, 'recall': 0.3248, 'f_measure': 0.3239}}[0m
+2024-12-16 11:00:28 - root - INFO: - [2;29mEpoch : 290/300 ===> Reconstruction Loss = 0.5712  ===> Global Consensus Learning Loss = -22.4833 ===> Classifying Consensus Learning Loss = -8.4374e+02 ===> Coding Consensus  Learning Loss = 109.0961 ===> Total Loss = -2.9792e+02[0m
+2024-12-16 11:00:52 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3649, 'NMI': 0.386, 'ARI': 0.1762, 'accuracy': 0.3152, 'precision': 0.3298, 'recall': 0.3152, 'f_measure': 0.319}}[0m
+2024-12-16 11:01:07 - root - INFO: - [2;29mEpoch : 300/300 ===> Reconstruction Loss = 0.5393  ===> Global Consensus Learning Loss = -22.6998 ===> Classifying Consensus Learning Loss = -8.4396e+02 ===> Coding Consensus  Learning Loss = 109.0521 ===> Total Loss = -2.9839e+02[0m
+2024-12-16 11:01:08 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3733, 'NMI': 0.3942, 'ARI': 0.1813, 'accuracy': 0.3257, 'precision': 0.3432, 'recall': 0.3257, 'f_measure': 0.328}}[0m
+2024-12-16 11:01:08 - root - INFO: - [2;29mbest scoresview_concat {'kmeans': {'AMI': 0.364, 'NMI': 0.3851, 'ARI': 0.1837, 'accuracy': 0.329, 'precision': 0.3318, 'recall': 0.329, 'f_measure': 0.3276}}[0m
+2024-12-16 11:01:08 - root - INFO: - Autoencoder(
+  (encoder): Sequential(
+    (0): Linear(in_features=59, out_features=1024, bias=True)
+    (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Linear(in_features=1024, out_features=1024, bias=True)
+    (4): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU()
+    (6): Linear(in_features=1024, out_features=1024, bias=True)
+    (7): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU()
+    (9): Linear(in_features=1024, out_features=64, bias=True)
+  )
+  (decoder): Sequential(
+    (0): Linear(in_features=64, out_features=1024, bias=True)
+    (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Linear(in_features=1024, out_features=1024, bias=True)
+    (4): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU()
+    (6): Linear(in_features=1024, out_features=1024, bias=True)
+    (7): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU()
+    (9): Linear(in_features=1024, out_features=59, bias=True)
+    (10): BatchNorm1d(59, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): ReLU()
+  )
+)
+2024-12-16 11:01:08 - root - INFO: - Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    capturable: False
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0001
+    maximize: False
+    weight_decay: 0
+)
+2024-12-16 11:01:22 - root - INFO: - [2;29mEpoch : 10/300 ===> Reconstruction Loss = 1.4616  ===> Global Consensus Learning Loss = 13.5467 ===> Classifying Consensus Learning Loss = -7.7060e+02 ===> Coding Consensus  Learning Loss = 120.6939 ===> Total Loss = -1.6554e+02[0m
+2024-12-16 11:01:23 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3586, 'NMI': 0.3802, 'ARI': 0.1743, 'accuracy': 0.3071, 'precision': 0.3185, 'recall': 0.3071, 'f_measure': 0.3061}}[0m
+2024-12-16 11:01:38 - root - INFO: - [2;29mEpoch : 20/300 ===> Reconstruction Loss = 1.2041  ===> Global Consensus Learning Loss = 6.2147 ===> Classifying Consensus Learning Loss = -8.1785e+02 ===> Coding Consensus  Learning Loss = 113.3220 ===> Total Loss = -2.4998e+02[0m
+2024-12-16 11:01:38 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3542, 'NMI': 0.3758, 'ARI': 0.1832, 'accuracy': 0.3167, 'precision': 0.3102, 'recall': 0.3167, 'f_measure': 0.3077}}[0m
+2024-12-16 11:01:54 - root - INFO: - [2;29mEpoch : 30/300 ===> Reconstruction Loss = 1.0971  ===> Global Consensus Learning Loss = 0.6472 ===> Classifying Consensus Learning Loss = -8.3166e+02 ===> Coding Consensus  Learning Loss = 111.2212 ===> Total Loss = -2.7445e+02[0m
+2024-12-16 11:01:54 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3434, 'NMI': 0.3652, 'ARI': 0.1835, 'accuracy': 0.3152, 'precision': 0.3118, 'recall': 0.3152, 'f_measure': 0.3084}}[0m
+2024-12-16 11:02:10 - root - INFO: - [2;29mEpoch : 40/300 ===> Reconstruction Loss = 0.9993  ===> Global Consensus Learning Loss = -2.6337 ===> Classifying Consensus Learning Loss = -8.3515e+02 ===> Coding Consensus  Learning Loss = 110.5843 ===> Total Loss = -2.8125e+02[0m
+2024-12-16 11:02:10 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3599, 'NMI': 0.3811, 'ARI': 0.1778, 'accuracy': 0.321, 'precision': 0.3368, 'recall': 0.321, 'f_measure': 0.3244}}[0m
+2024-12-16 11:02:26 - root - INFO: - [2;29mEpoch : 50/300 ===> Reconstruction Loss = 0.9163  ===> Global Consensus Learning Loss = -5.0552 ===> Classifying Consensus Learning Loss = -8.3720e+02 ===> Coding Consensus  Learning Loss = 110.1643 ===> Total Loss = -2.8551e+02[0m
+2024-12-16 11:02:26 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.354, 'NMI': 0.3755, 'ARI': 0.186, 'accuracy': 0.321, 'precision': 0.3255, 'recall': 0.321, 'f_measure': 0.3188}}[0m
+2024-12-16 11:02:41 - root - INFO: - [2;29mEpoch : 60/300 ===> Reconstruction Loss = 0.9329  ===> Global Consensus Learning Loss = -7.0698 ===> Classifying Consensus Learning Loss = -8.4029e+02 ===> Coding Consensus  Learning Loss = 109.7945 ===> Total Loss = -2.9046e+02[0m
+2024-12-16 11:02:41 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3614, 'NMI': 0.3826, 'ARI': 0.1816, 'accuracy': 0.3167, 'precision': 0.3275, 'recall': 0.3167, 'f_measure': 0.317}}[0m
+2024-12-16 11:02:56 - root - INFO: - [2;29mEpoch : 70/300 ===> Reconstruction Loss = 0.8865  ===> Global Consensus Learning Loss = -8.6348 ===> Classifying Consensus Learning Loss = -8.3888e+02 ===> Coding Consensus  Learning Loss = 109.7228 ===> Total Loss = -2.8947e+02[0m
+2024-12-16 11:02:56 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3435, 'NMI': 0.3653, 'ARI': 0.1742, 'accuracy': 0.3095, 'precision': 0.312, 'recall': 0.3095, 'f_measure': 0.3068}}[0m
+2024-12-16 11:03:11 - root - INFO: - [2;29mEpoch : 80/300 ===> Reconstruction Loss = 0.9011  ===> Global Consensus Learning Loss = -10.1153 ===> Classifying Consensus Learning Loss = -8.4195e+02 ===> Coding Consensus  Learning Loss = 109.7775 ===> Total Loss = -2.9226e+02[0m
+2024-12-16 11:03:11 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3525, 'NMI': 0.374, 'ARI': 0.1764, 'accuracy': 0.3095, 'precision': 0.3103, 'recall': 0.3095, 'f_measure': 0.3058}}[0m
+2024-12-16 11:03:27 - root - INFO: - [2;29mEpoch : 90/300 ===> Reconstruction Loss = 0.8418  ===> Global Consensus Learning Loss = -11.2774 ===> Classifying Consensus Learning Loss = -8.4187e+02 ===> Coding Consensus  Learning Loss = 109.5877 ===> Total Loss = -2.9320e+02[0m
+2024-12-16 11:03:27 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3382, 'NMI': 0.3602, 'ARI': 0.1722, 'accuracy': 0.3024, 'precision': 0.2929, 'recall': 0.3024, 'f_measure': 0.2947}}[0m
+2024-12-16 11:03:42 - root - INFO: - [2;29mEpoch : 100/300 ===> Reconstruction Loss = 0.8106  ===> Global Consensus Learning Loss = -12.3361 ===> Classifying Consensus Learning Loss = -8.4313e+02 ===> Coding Consensus  Learning Loss = 109.3905 ===> Total Loss = -2.9549e+02[0m
+2024-12-16 11:03:42 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3585, 'NMI': 0.38, 'ARI': 0.179, 'accuracy': 0.3029, 'precision': 0.3012, 'recall': 0.3029, 'f_measure': 0.2955}}[0m
+2024-12-16 11:03:57 - root - INFO: - [2;29mEpoch : 110/300 ===> Reconstruction Loss = 0.8006  ===> Global Consensus Learning Loss = -13.3265 ===> Classifying Consensus Learning Loss = -8.4358e+02 ===> Coding Consensus  Learning Loss = 109.3718 ===> Total Loss = -2.9605e+02[0m
+2024-12-16 11:03:57 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3451, 'NMI': 0.3669, 'ARI': 0.1679, 'accuracy': 0.3043, 'precision': 0.3092, 'recall': 0.3043, 'f_measure': 0.3014}}[0m
+2024-12-16 11:04:13 - root - INFO: - [2;29mEpoch : 120/300 ===> Reconstruction Loss = 0.8182  ===> Global Consensus Learning Loss = -14.3115 ===> Classifying Consensus Learning Loss = -8.4218e+02 ===> Coding Consensus  Learning Loss = 109.2166 ===> Total Loss = -2.9542e+02[0m
+2024-12-16 11:04:13 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3563, 'NMI': 0.3778, 'ARI': 0.1777, 'accuracy': 0.3105, 'precision': 0.3117, 'recall': 0.3105, 'f_measure': 0.3061}}[0m
+2024-12-16 11:04:28 - root - INFO: - [2;29mEpoch : 130/300 ===> Reconstruction Loss = 0.7683  ===> Global Consensus Learning Loss = -15.0360 ===> Classifying Consensus Learning Loss = -8.4332e+02 ===> Coding Consensus  Learning Loss = 109.1858 ===> Total Loss = -2.9678e+02[0m
+2024-12-16 11:04:28 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3633, 'NMI': 0.3845, 'ARI': 0.178, 'accuracy': 0.3214, 'precision': 0.3401, 'recall': 0.3214, 'f_measure': 0.3247}}[0m
+2024-12-16 11:04:43 - root - INFO: - [2;29mEpoch : 140/300 ===> Reconstruction Loss = 0.7297  ===> Global Consensus Learning Loss = -15.7122 ===> Classifying Consensus Learning Loss = -8.4498e+02 ===> Coding Consensus  Learning Loss = 109.0432 ===> Total Loss = -2.9919e+02[0m
+2024-12-16 11:04:44 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3601, 'NMI': 0.3814, 'ARI': 0.1761, 'accuracy': 0.3152, 'precision': 0.3308, 'recall': 0.3152, 'f_measure': 0.3174}}[0m
+2024-12-16 11:04:59 - root - INFO: - [2;29mEpoch : 150/300 ===> Reconstruction Loss = 0.7069  ===> Global Consensus Learning Loss = -16.3652 ===> Classifying Consensus Learning Loss = -8.4437e+02 ===> Coding Consensus  Learning Loss = 109.1510 ===> Total Loss = -2.9807e+02[0m
+2024-12-16 11:04:59 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3564, 'NMI': 0.3778, 'ARI': 0.1743, 'accuracy': 0.3171, 'precision': 0.3259, 'recall': 0.3171, 'f_measure': 0.3173}}[0m
+2024-12-16 11:05:14 - root - INFO: - [2;29mEpoch : 160/300 ===> Reconstruction Loss = 0.7695  ===> Global Consensus Learning Loss = -17.0604 ===> Classifying Consensus Learning Loss = -8.4326e+02 ===> Coding Consensus  Learning Loss = 109.3162 ===> Total Loss = -2.9608e+02[0m
+2024-12-16 11:05:14 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3519, 'NMI': 0.3736, 'ARI': 0.1681, 'accuracy': 0.3033, 'precision': 0.3133, 'recall': 0.3033, 'f_measure': 0.3011}}[0m
+2024-12-16 11:05:29 - root - INFO: - [2;29mEpoch : 170/300 ===> Reconstruction Loss = 0.7002  ===> Global Consensus Learning Loss = -17.7812 ===> Classifying Consensus Learning Loss = -8.4566e+02 ===> Coding Consensus  Learning Loss = 109.0879 ===> Total Loss = -2.9970e+02[0m
+2024-12-16 11:05:30 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3581, 'NMI': 0.3797, 'ARI': 0.1759, 'accuracy': 0.309, 'precision': 0.3143, 'recall': 0.309, 'f_measure': 0.3036}}[0m
+2024-12-16 11:05:45 - root - INFO: - [2;29mEpoch : 180/300 ===> Reconstruction Loss = 0.6947  ===> Global Consensus Learning Loss = -18.2341 ===> Classifying Consensus Learning Loss = -8.4463e+02 ===> Coding Consensus  Learning Loss = 109.1297 ===> Total Loss = -2.9847e+02[0m
+2024-12-16 11:05:45 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.363, 'NMI': 0.3843, 'ARI': 0.1776, 'accuracy': 0.3095, 'precision': 0.3107, 'recall': 0.3095, 'f_measure': 0.3051}}[0m
+2024-12-16 11:06:00 - root - INFO: - [2;29mEpoch : 190/300 ===> Reconstruction Loss = 0.7351  ===> Global Consensus Learning Loss = -18.7813 ===> Classifying Consensus Learning Loss = -8.4574e+02 ===> Coding Consensus  Learning Loss = 109.1993 ===> Total Loss = -2.9919e+02[0m
+2024-12-16 11:06:00 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3615, 'NMI': 0.3827, 'ARI': 0.1796, 'accuracy': 0.321, 'precision': 0.3269, 'recall': 0.321, 'f_measure': 0.3189}}[0m
+2024-12-16 11:06:16 - root - INFO: - [2;29mEpoch : 200/300 ===> Reconstruction Loss = 0.6695  ===> Global Consensus Learning Loss = -19.3039 ===> Classifying Consensus Learning Loss = -8.4498e+02 ===> Coding Consensus  Learning Loss = 109.1231 ===> Total Loss = -2.9889e+02[0m
+2024-12-16 11:06:16 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3694, 'NMI': 0.3905, 'ARI': 0.1799, 'accuracy': 0.3205, 'precision': 0.3221, 'recall': 0.3205, 'f_measure': 0.3148}}[0m
+2024-12-16 11:06:31 - root - INFO: - [2;29mEpoch : 210/300 ===> Reconstruction Loss = 0.6770  ===> Global Consensus Learning Loss = -19.7159 ===> Classifying Consensus Learning Loss = -8.4491e+02 ===> Coding Consensus  Learning Loss = 109.2480 ===> Total Loss = -2.9819e+02[0m
+2024-12-16 11:06:31 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3559, 'NMI': 0.3774, 'ARI': 0.1701, 'accuracy': 0.3048, 'precision': 0.3154, 'recall': 0.3048, 'f_measure': 0.3038}}[0m
+2024-12-16 11:06:46 - root - INFO: - [2;29mEpoch : 220/300 ===> Reconstruction Loss = 0.6492  ===> Global Consensus Learning Loss = -20.1296 ===> Classifying Consensus Learning Loss = -8.4480e+02 ===> Coding Consensus  Learning Loss = 109.0800 ===> Total Loss = -2.9895e+02[0m
+2024-12-16 11:06:46 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3679, 'NMI': 0.3891, 'ARI': 0.1769, 'accuracy': 0.3176, 'precision': 0.3257, 'recall': 0.3176, 'f_measure': 0.3146}}[0m
+2024-12-16 11:07:01 - root - INFO: - [2;29mEpoch : 230/300 ===> Reconstruction Loss = 0.6353  ===> Global Consensus Learning Loss = -20.5377 ===> Classifying Consensus Learning Loss = -8.4524e+02 ===> Coding Consensus  Learning Loss = 109.1605 ===> Total Loss = -2.9901e+02[0m
+2024-12-16 11:07:02 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3578, 'NMI': 0.3793, 'ARI': 0.1761, 'accuracy': 0.3195, 'precision': 0.3261, 'recall': 0.3195, 'f_measure': 0.3155}}[0m
+2024-12-16 11:07:17 - root - INFO: - [2;29mEpoch : 240/300 ===> Reconstruction Loss = 0.6153  ===> Global Consensus Learning Loss = -20.9586 ===> Classifying Consensus Learning Loss = -8.4659e+02 ===> Coding Consensus  Learning Loss = 109.0554 ===> Total Loss = -3.0090e+02[0m
+2024-12-16 11:07:17 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3637, 'NMI': 0.385, 'ARI': 0.1776, 'accuracy': 0.321, 'precision': 0.3313, 'recall': 0.321, 'f_measure': 0.3197}}[0m
+2024-12-16 11:07:32 - root - INFO: - [2;29mEpoch : 250/300 ===> Reconstruction Loss = 0.8225  ===> Global Consensus Learning Loss = -21.3733 ===> Classifying Consensus Learning Loss = -8.4790e+02 ===> Coding Consensus  Learning Loss = 109.2760 ===> Total Loss = -3.0091e+02[0m
+2024-12-16 11:07:32 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3619, 'NMI': 0.3832, 'ARI': 0.1769, 'accuracy': 0.3152, 'precision': 0.3134, 'recall': 0.3152, 'f_measure': 0.3092}}[0m
+2024-12-16 11:07:47 - root - INFO: - [2;29mEpoch : 260/300 ===> Reconstruction Loss = 0.6988  ===> Global Consensus Learning Loss = -21.6536 ===> Classifying Consensus Learning Loss = -8.4320e+02 ===> Coding Consensus  Learning Loss = 109.1408 ===> Total Loss = -2.9702e+02[0m
+2024-12-16 11:07:48 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3688, 'NMI': 0.3899, 'ARI': 0.1755, 'accuracy': 0.3195, 'precision': 0.3434, 'recall': 0.3195, 'f_measure': 0.3252}}[0m
+2024-12-16 11:08:03 - root - INFO: - [2;29mEpoch : 270/300 ===> Reconstruction Loss = 0.6452  ===> Global Consensus Learning Loss = -21.9256 ===> Classifying Consensus Learning Loss = -8.5109e+02 ===> Coding Consensus  Learning Loss = 109.2739 ===> Total Loss = -3.0429e+02[0m
+2024-12-16 11:08:03 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3418, 'NMI': 0.3637, 'ARI': 0.1665, 'accuracy': 0.299, 'precision': 0.3062, 'recall': 0.299, 'f_measure': 0.2981}}[0m
+2024-12-16 11:08:18 - root - INFO: - [2;29mEpoch : 280/300 ===> Reconstruction Loss = 0.6512  ===> Global Consensus Learning Loss = -22.1984 ===> Classifying Consensus Learning Loss = -8.4743e+02 ===> Coding Consensus  Learning Loss = 109.1291 ===> Total Loss = -3.0136e+02[0m
+2024-12-16 11:08:18 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3514, 'NMI': 0.373, 'ARI': 0.1742, 'accuracy': 0.3148, 'precision': 0.3263, 'recall': 0.3148, 'f_measure': 0.3154}}[0m
+2024-12-16 11:08:32 - root - INFO: - [2;29mEpoch : 290/300 ===> Reconstruction Loss = 0.6659  ===> Global Consensus Learning Loss = -22.6632 ===> Classifying Consensus Learning Loss = -8.4906e+02 ===> Coding Consensus  Learning Loss = 109.1720 ===> Total Loss = -3.0276e+02[0m
+2024-12-16 11:08:32 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.37, 'NMI': 0.3911, 'ARI': 0.1809, 'accuracy': 0.32, 'precision': 0.3284, 'recall': 0.32, 'f_measure': 0.3171}}[0m
+2024-12-16 11:08:47 - root - INFO: - [2;29mEpoch : 300/300 ===> Reconstruction Loss = 0.5836  ===> Global Consensus Learning Loss = -22.8123 ===> Classifying Consensus Learning Loss = -8.4736e+02 ===> Coding Consensus  Learning Loss = 108.9881 ===> Total Loss = -3.0207e+02[0m
+2024-12-16 11:08:47 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3705, 'NMI': 0.3914, 'ARI': 0.1853, 'accuracy': 0.3252, 'precision': 0.3323, 'recall': 0.3252, 'f_measure': 0.3229}}[0m
+2024-12-16 11:08:47 - root - INFO: - [2;29mbest scoresview_concat {'kmeans': {'AMI': 0.3705, 'NMI': 0.3914, 'ARI': 0.1853, 'accuracy': 0.3252, 'precision': 0.3323, 'recall': 0.3252, 'f_measure': 0.3229}}[0m
+2024-12-16 11:08:48 - root - INFO: - Autoencoder(
+  (encoder): Sequential(
+    (0): Linear(in_features=59, out_features=1024, bias=True)
+    (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Linear(in_features=1024, out_features=1024, bias=True)
+    (4): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU()
+    (6): Linear(in_features=1024, out_features=1024, bias=True)
+    (7): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU()
+    (9): Linear(in_features=1024, out_features=64, bias=True)
+  )
+  (decoder): Sequential(
+    (0): Linear(in_features=64, out_features=1024, bias=True)
+    (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Linear(in_features=1024, out_features=1024, bias=True)
+    (4): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU()
+    (6): Linear(in_features=1024, out_features=1024, bias=True)
+    (7): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU()
+    (9): Linear(in_features=1024, out_features=59, bias=True)
+    (10): BatchNorm1d(59, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): ReLU()
+  )
+)
+2024-12-16 11:08:48 - root - INFO: - Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    capturable: False
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0001
+    maximize: False
+    weight_decay: 0
+)
+2024-12-16 11:09:03 - root - INFO: - [2;29mEpoch : 10/300 ===> Reconstruction Loss = 1.4720  ===> Global Consensus Learning Loss = 12.0769 ===> Classifying Consensus Learning Loss = -7.7544e+02 ===> Coding Consensus  Learning Loss = 119.7538 ===> Total Loss = -1.7508e+02[0m
+2024-12-16 11:09:03 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3389, 'NMI': 0.361, 'ARI': 0.1622, 'accuracy': 0.3033, 'precision': 0.3246, 'recall': 0.3033, 'f_measure': 0.3031}}[0m
+2024-12-16 11:09:19 - root - INFO: - [2;29mEpoch : 20/300 ===> Reconstruction Loss = 1.2546  ===> Global Consensus Learning Loss = 5.6281 ===> Classifying Consensus Learning Loss = -8.2033e+02 ===> Coding Consensus  Learning Loss = 113.1086 ===> Total Loss = -2.5348e+02[0m
+2024-12-16 11:09:19 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3421, 'NMI': 0.3639, 'ARI': 0.1645, 'accuracy': 0.3052, 'precision': 0.3133, 'recall': 0.3052, 'f_measure': 0.3068}}[0m
+2024-12-16 11:09:35 - root - INFO: - [2;29mEpoch : 30/300 ===> Reconstruction Loss = 1.0171  ===> Global Consensus Learning Loss = 0.2622 ===> Classifying Consensus Learning Loss = -8.3524e+02 ===> Coding Consensus  Learning Loss = 111.1047 ===> Total Loss = -2.7870e+02[0m
+2024-12-16 11:09:35 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.35, 'NMI': 0.3715, 'ARI': 0.1713, 'accuracy': 0.3071, 'precision': 0.3147, 'recall': 0.3071, 'f_measure': 0.3082}}[0m
+2024-12-16 11:09:50 - root - INFO: - [2;29mEpoch : 40/300 ===> Reconstruction Loss = 0.9658  ===> Global Consensus Learning Loss = -2.9508 ===> Classifying Consensus Learning Loss = -8.3980e+02 ===> Coding Consensus  Learning Loss = 110.2061 ===> Total Loss = -2.8783e+02[0m
+2024-12-16 11:09:51 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3428, 'NMI': 0.3648, 'ARI': 0.1656, 'accuracy': 0.2895, 'precision': 0.3019, 'recall': 0.2895, 'f_measure': 0.2904}}[0m
+2024-12-16 11:10:06 - root - INFO: - [2;29mEpoch : 50/300 ===> Reconstruction Loss = 0.9167  ===> Global Consensus Learning Loss = -5.4097 ===> Classifying Consensus Learning Loss = -8.4076e+02 ===> Coding Consensus  Learning Loss = 109.9078 ===> Total Loss = -2.9036e+02[0m
+2024-12-16 11:10:06 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3593, 'NMI': 0.3807, 'ARI': 0.1835, 'accuracy': 0.3105, 'precision': 0.3249, 'recall': 0.3105, 'f_measure': 0.3099}}[0m
+2024-12-16 11:10:21 - root - INFO: - [2;29mEpoch : 60/300 ===> Reconstruction Loss = 0.9421  ===> Global Consensus Learning Loss = -7.3534 ===> Classifying Consensus Learning Loss = -8.4068e+02 ===> Coding Consensus  Learning Loss = 109.8951 ===> Total Loss = -2.9033e+02[0m
+2024-12-16 11:10:21 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3443, 'NMI': 0.3661, 'ARI': 0.164, 'accuracy': 0.2914, 'precision': 0.3017, 'recall': 0.2914, 'f_measure': 0.2936}}[0m
+2024-12-16 11:10:37 - root - INFO: - [2;29mEpoch : 70/300 ===> Reconstruction Loss = 0.8868  ===> Global Consensus Learning Loss = -8.9698 ===> Classifying Consensus Learning Loss = -8.4349e+02 ===> Coding Consensus  Learning Loss = 109.5781 ===> Total Loss = -2.9481e+02[0m
+2024-12-16 11:10:37 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3564, 'NMI': 0.3778, 'ARI': 0.1772, 'accuracy': 0.3043, 'precision': 0.3085, 'recall': 0.3043, 'f_measure': 0.3041}}[0m
+2024-12-16 11:10:53 - root - INFO: - [2;29mEpoch : 80/300 ===> Reconstruction Loss = 0.8426  ===> Global Consensus Learning Loss = -10.3583 ===> Classifying Consensus Learning Loss = -8.4476e+02 ===> Coding Consensus  Learning Loss = 109.6272 ===> Total Loss = -2.9588e+02[0m
+2024-12-16 11:10:53 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3566, 'NMI': 0.3779, 'ARI': 0.1775, 'accuracy': 0.2981, 'precision': 0.3087, 'recall': 0.2981, 'f_measure': 0.2997}}[0m
+2024-12-16 11:11:08 - root - INFO: - [2;29mEpoch : 90/300 ===> Reconstruction Loss = 0.8426  ===> Global Consensus Learning Loss = -11.5880 ===> Classifying Consensus Learning Loss = -8.4324e+02 ===> Coding Consensus  Learning Loss = 109.3973 ===> Total Loss = -2.9552e+02[0m
+2024-12-16 11:11:09 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3412, 'NMI': 0.3631, 'ARI': 0.1691, 'accuracy': 0.3048, 'precision': 0.3246, 'recall': 0.3048, 'f_measure': 0.311}}[0m
+2024-12-16 11:11:24 - root - INFO: - [2;29mEpoch : 100/300 ===> Reconstruction Loss = 0.8470  ===> Global Consensus Learning Loss = -12.6329 ===> Classifying Consensus Learning Loss = -8.4569e+02 ===> Coding Consensus  Learning Loss = 109.3494 ===> Total Loss = -2.9822e+02[0m
+2024-12-16 11:11:25 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3559, 'NMI': 0.3773, 'ARI': 0.1822, 'accuracy': 0.3114, 'precision': 0.3187, 'recall': 0.3114, 'f_measure': 0.3105}}[0m
+2024-12-16 11:11:41 - root - INFO: - [2;29mEpoch : 110/300 ===> Reconstruction Loss = 0.8184  ===> Global Consensus Learning Loss = -13.6883 ===> Classifying Consensus Learning Loss = -8.4514e+02 ===> Coding Consensus  Learning Loss = 109.2372 ===> Total Loss = -2.9827e+02[0m
+2024-12-16 11:11:41 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3554, 'NMI': 0.3769, 'ARI': 0.1761, 'accuracy': 0.3086, 'precision': 0.3332, 'recall': 0.3086, 'f_measure': 0.3133}}[0m
+2024-12-16 11:11:56 - root - INFO: - [2;29mEpoch : 120/300 ===> Reconstruction Loss = 0.7671  ===> Global Consensus Learning Loss = -14.4999 ===> Classifying Consensus Learning Loss = -8.4763e+02 ===> Coding Consensus  Learning Loss = 109.1802 ===> Total Loss = -3.0111e+02[0m
+2024-12-16 11:11:57 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3556, 'NMI': 0.3771, 'ARI': 0.1711, 'accuracy': 0.3057, 'precision': 0.3382, 'recall': 0.3057, 'f_measure': 0.3152}}[0m
+2024-12-16 11:12:13 - root - INFO: - [2;29mEpoch : 130/300 ===> Reconstruction Loss = 0.7507  ===> Global Consensus Learning Loss = -15.3322 ===> Classifying Consensus Learning Loss = -8.4733e+02 ===> Coding Consensus  Learning Loss = 109.1788 ===> Total Loss = -3.0084e+02[0m
+2024-12-16 11:12:14 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3545, 'NMI': 0.3759, 'ARI': 0.1715, 'accuracy': 0.2981, 'precision': 0.304, 'recall': 0.2981, 'f_measure': 0.2992}}[0m
+2024-12-16 11:12:29 - root - INFO: - [2;29mEpoch : 140/300 ===> Reconstruction Loss = 0.6857  ===> Global Consensus Learning Loss = -16.0656 ===> Classifying Consensus Learning Loss = -8.4596e+02 ===> Coding Consensus  Learning Loss = 109.0889 ===> Total Loss = -2.9999e+02[0m
+2024-12-16 11:12:51 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.352, 'NMI': 0.3735, 'ARI': 0.1753, 'accuracy': 0.32, 'precision': 0.3259, 'recall': 0.32, 'f_measure': 0.319}}[0m
+2024-12-16 11:13:06 - root - INFO: - [2;29mEpoch : 150/300 ===> Reconstruction Loss = 0.6961  ===> Global Consensus Learning Loss = -16.7367 ===> Classifying Consensus Learning Loss = -8.4624e+02 ===> Coding Consensus  Learning Loss = 109.0366 ===> Total Loss = -3.0053e+02[0m
+2024-12-16 11:13:06 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3573, 'NMI': 0.3786, 'ARI': 0.1768, 'accuracy': 0.311, 'precision': 0.3179, 'recall': 0.311, 'f_measure': 0.3111}}[0m
+2024-12-16 11:13:21 - root - INFO: - [2;29mEpoch : 160/300 ===> Reconstruction Loss = 0.7722  ===> Global Consensus Learning Loss = -17.3741 ===> Classifying Consensus Learning Loss = -8.5086e+02 ===> Coding Consensus  Learning Loss = 109.1305 ===> Total Loss = -3.0461e+02[0m
+2024-12-16 11:13:26 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.355, 'NMI': 0.3764, 'ARI': 0.1777, 'accuracy': 0.3162, 'precision': 0.324, 'recall': 0.3162, 'f_measure': 0.3168}}[0m
+2024-12-16 11:13:41 - root - INFO: - [2;29mEpoch : 170/300 ===> Reconstruction Loss = 0.6755  ===> Global Consensus Learning Loss = -17.9157 ===> Classifying Consensus Learning Loss = -8.4578e+02 ===> Coding Consensus  Learning Loss = 109.0747 ===> Total Loss = -2.9991e+02[0m
+2024-12-16 11:13:42 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3611, 'NMI': 0.3823, 'ARI': 0.181, 'accuracy': 0.3157, 'precision': 0.3261, 'recall': 0.3157, 'f_measure': 0.3169}}[0m
+2024-12-16 11:13:57 - root - INFO: - [2;29mEpoch : 180/300 ===> Reconstruction Loss = 0.6680  ===> Global Consensus Learning Loss = -18.4332 ===> Classifying Consensus Learning Loss = -8.4927e+02 ===> Coding Consensus  Learning Loss = 109.1215 ===> Total Loss = -3.0318e+02[0m
+2024-12-16 11:13:58 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.351, 'NMI': 0.3726, 'ARI': 0.1724, 'accuracy': 0.309, 'precision': 0.3325, 'recall': 0.309, 'f_measure': 0.3162}}[0m
+2024-12-16 11:14:13 - root - INFO: - [2;29mEpoch : 190/300 ===> Reconstruction Loss = 0.6514  ===> Global Consensus Learning Loss = -18.9160 ===> Classifying Consensus Learning Loss = -8.4449e+02 ===> Coding Consensus  Learning Loss = 109.0534 ===> Total Loss = -2.9876e+02[0m
+2024-12-16 11:14:14 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3463, 'NMI': 0.3679, 'ARI': 0.1686, 'accuracy': 0.2948, 'precision': 0.3082, 'recall': 0.2948, 'f_measure': 0.299}}[0m
+2024-12-16 11:14:29 - root - INFO: - [2;29mEpoch : 200/300 ===> Reconstruction Loss = 0.6088  ===> Global Consensus Learning Loss = -19.3734 ===> Classifying Consensus Learning Loss = -8.5055e+02 ===> Coding Consensus  Learning Loss = 109.1119 ===> Total Loss = -3.0457e+02[0m
+2024-12-16 11:14:30 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3504, 'NMI': 0.372, 'ARI': 0.1752, 'accuracy': 0.3124, 'precision': 0.3174, 'recall': 0.3124, 'f_measure': 0.3101}}[0m
+2024-12-16 11:14:45 - root - INFO: - [2;29mEpoch : 210/300 ===> Reconstruction Loss = 0.5945  ===> Global Consensus Learning Loss = -19.8702 ===> Classifying Consensus Learning Loss = -8.4841e+02 ===> Coding Consensus  Learning Loss = 109.0776 ===> Total Loss = -3.0262e+02[0m
+2024-12-16 11:14:46 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3601, 'NMI': 0.3815, 'ARI': 0.1756, 'accuracy': 0.3195, 'precision': 0.3486, 'recall': 0.3195, 'f_measure': 0.3263}}[0m
+2024-12-16 11:15:03 - root - INFO: - [2;29mEpoch : 220/300 ===> Reconstruction Loss = 0.5820  ===> Global Consensus Learning Loss = -20.2863 ===> Classifying Consensus Learning Loss = -8.4965e+02 ===> Coding Consensus  Learning Loss = 108.9846 ===> Total Loss = -3.0435e+02[0m
+2024-12-16 11:15:04 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3538, 'NMI': 0.3754, 'ARI': 0.172, 'accuracy': 0.3171, 'precision': 0.3293, 'recall': 0.3171, 'f_measure': 0.3185}}[0m
+2024-12-16 11:15:18 - root - INFO: - [2;29mEpoch : 230/300 ===> Reconstruction Loss = 0.5893  ===> Global Consensus Learning Loss = -20.6984 ===> Classifying Consensus Learning Loss = -8.4930e+02 ===> Coding Consensus  Learning Loss = 109.0001 ===> Total Loss = -3.0392e+02[0m
+2024-12-16 11:15:18 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3448, 'NMI': 0.3665, 'ARI': 0.1696, 'accuracy': 0.3071, 'precision': 0.3167, 'recall': 0.3071, 'f_measure': 0.3093}}[0m
+2024-12-16 11:15:33 - root - INFO: - [2;29mEpoch : 240/300 ===> Reconstruction Loss = 0.6047  ===> Global Consensus Learning Loss = -21.0503 ===> Classifying Consensus Learning Loss = -8.4691e+02 ===> Coding Consensus  Learning Loss = 109.0398 ===> Total Loss = -3.0132e+02[0m
+2024-12-16 11:15:33 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.359, 'NMI': 0.3804, 'ARI': 0.1756, 'accuracy': 0.3062, 'precision': 0.3093, 'recall': 0.3062, 'f_measure': 0.304}}[0m
+2024-12-16 11:15:48 - root - INFO: - [2;29mEpoch : 250/300 ===> Reconstruction Loss = 0.6586  ===> Global Consensus Learning Loss = -21.4908 ===> Classifying Consensus Learning Loss = -8.4728e+02 ===> Coding Consensus  Learning Loss = 109.1958 ===> Total Loss = -3.0086e+02[0m
+2024-12-16 11:15:48 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3595, 'NMI': 0.381, 'ARI': 0.1716, 'accuracy': 0.3033, 'precision': 0.3156, 'recall': 0.3033, 'f_measure': 0.3031}}[0m
+2024-12-16 11:16:04 - root - INFO: - [2;29mEpoch : 260/300 ===> Reconstruction Loss = 0.5780  ===> Global Consensus Learning Loss = -21.7897 ===> Classifying Consensus Learning Loss = -8.4624e+02 ===> Coding Consensus  Learning Loss = 108.9738 ===> Total Loss = -3.0101e+02[0m
+2024-12-16 11:16:04 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3499, 'NMI': 0.3715, 'ARI': 0.1689, 'accuracy': 0.3062, 'precision': 0.3177, 'recall': 0.3062, 'f_measure': 0.3085}}[0m
+2024-12-16 11:16:19 - root - INFO: - [2;29mEpoch : 270/300 ===> Reconstruction Loss = 0.6060  ===> Global Consensus Learning Loss = -22.0324 ===> Classifying Consensus Learning Loss = -8.4766e+02 ===> Coding Consensus  Learning Loss = 108.9360 ===> Total Loss = -3.0260e+02[0m
+2024-12-16 11:16:20 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3505, 'NMI': 0.3722, 'ARI': 0.1665, 'accuracy': 0.3029, 'precision': 0.3391, 'recall': 0.3029, 'f_measure': 0.3124}}[0m
+2024-12-16 11:16:35 - root - INFO: - [2;29mEpoch : 280/300 ===> Reconstruction Loss = 0.6215  ===> Global Consensus Learning Loss = -22.3057 ===> Classifying Consensus Learning Loss = -8.4829e+02 ===> Coding Consensus  Learning Loss = 109.2571 ===> Total Loss = -3.0161e+02[0m
+2024-12-16 11:16:35 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3591, 'NMI': 0.3805, 'ARI': 0.1738, 'accuracy': 0.3105, 'precision': 0.3384, 'recall': 0.3105, 'f_measure': 0.3175}}[0m
+2024-12-16 11:16:50 - root - INFO: - [2;29mEpoch : 290/300 ===> Reconstruction Loss = 0.5831  ===> Global Consensus Learning Loss = -22.5535 ===> Classifying Consensus Learning Loss = -8.5408e+02 ===> Coding Consensus  Learning Loss = 108.8427 ===> Total Loss = -3.0951e+02[0m
+2024-12-16 11:16:51 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.358, 'NMI': 0.3794, 'ARI': 0.1726, 'accuracy': 0.3186, 'precision': 0.3507, 'recall': 0.3186, 'f_measure': 0.327}}[0m
+2024-12-16 11:17:06 - root - INFO: - [2;29mEpoch : 300/300 ===> Reconstruction Loss = 0.5716  ===> Global Consensus Learning Loss = -22.8706 ===> Classifying Consensus Learning Loss = -8.4999e+02 ===> Coding Consensus  Learning Loss = 109.0550 ===> Total Loss = -3.0437e+02[0m
+2024-12-16 11:17:06 - root - INFO: - [2;29mview_concat {'kmeans': {'AMI': 0.3528, 'NMI': 0.3743, 'ARI': 0.1669, 'accuracy': 0.2962, 'precision': 0.3166, 'recall': 0.2962, 'f_measure': 0.3028}}[0m
+2024-12-16 11:17:06 - root - INFO: - [2;29mbest scoresview_concat {'kmeans': {'AMI': 0.352, 'NMI': 0.3735, 'ARI': 0.1753, 'accuracy': 0.32, 'precision': 0.3259, 'recall': 0.32, 'f_measure': 0.319}}[0m
+2024-12-16 11:17:06 - root - INFO: - --------------------Training over--------------------
+2024-12-16 11:17:06 - root - INFO: - The total of training time is2402.2788755893707
+2024-12-16 11:17:06 - root - INFO: - ACC:[0.3152, 0.3438, 0.329, 0.3252, 0.32]
+2024-12-16 11:17:06 - root - INFO: - NMI:[0.3716, 0.398, 0.3851, 0.3914, 0.3735]
+2024-12-16 11:17:06 - root - INFO: - ARI:[0.1672, 0.1939, 0.1837, 0.1853, 0.1753]
+2024-12-16 11:17:06 - root - INFO: -  ACC 32.66 std 0.98 NMI 38.39 std 1.02 ARI 18.11 std 0.91
